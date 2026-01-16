@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-mern",
+  "version": "1.0.0",
+  "description": "IDE-Inspired MERN Stack Developer Portfolio",
+  "private": true,
+  "scripts": {
+    "setup": "bash setup.sh",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install && cd ..",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "start:server": "cd server && npm start"
+  },
+  "keywords": [
+    "mern",
+    "portfolio",
+    "react",
+    "nodejs",
+    "mongodb",
+    "fullstack"
+  ],
+  "author": "Rohit Kurade",
+  "license": "MIT"
+}

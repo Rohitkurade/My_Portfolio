@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050505;
+  color: #e8eaed;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animated Grid Background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(98, 114, 164, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(98, 114, 164, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.grid-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(198, 120, 221, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(97, 175, 239, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Code Block Styling */
+.code-block {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(98, 114, 164, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.code-keyword {
+  color: #c678dd;
+}
+
+.code-string {
+  color: #98c379;
+}
+
+.code-function {
+  color: #61afef;
+}
+
+.code-comment {
+  color: #5c6370;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(198, 120, 221, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 120, 221, 0.8);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(198, 120, 221, 0.3);
+  color: #e8eaed;
+}
