@@ -285,6 +285,6 @@ Built by Rohit Kurade - Full-Stack Developer
 
 For issues, questions, or suggestions, please create an issue on GitHub.
 
----
+----
 
 **Happy Coding! 🚀**
