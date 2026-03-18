@@ -44,7 +44,6 @@ A high-end, single-page MERN stack developer portfolio with an IDE/Code-Editor a
 
 ## Project Structure
 
-````
 portfolio_mern/
 ├── client/                    # React Frontend
 │   ├── src/
