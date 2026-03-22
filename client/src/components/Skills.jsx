@@ -32,7 +32,7 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative py-32 px-6 overflow-hidden">
+    <section id="skills" className="relative py-8 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -77,19 +77,39 @@ export const Skills = () => {
                   <motion.div
                     key={skill.name}
                     variants={skillVariants}
-                    whileHover="hover"
+                    whileHover={{ 
+                      scale: 1.05, 
+                      boxShadow: "0 0 20px rgba(198, 120, 221, 0.4)",
+                      backgroundColor: "rgba(97, 175, 239, 0.1)",
+                      transition: { duration: 0.3 }
+                    }}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-3 rounded bg-opacity-50 bg-gray-900 border border-opacity-20 border-code-purple cursor-pointer transition-all"
+                    className="p-3 rounded bg-opacity-50 bg-gray-900 border border-opacity-20 border-code-purple cursor-pointer transition-all hover:border-opacity-100 hover:border-code-cyan"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-2xl">{skill.icon}</span>
-                        <span className="font-mono text-sm">{skill.name}</span>
+                        <motion.span 
+                          className="text-2xl"
+                          whileHover={{ rotate: 20, scale: 1.2 }}
+                        >
+                          {skill.icon}
+                        </motion.span>
+                        <motion.span 
+                          className="font-mono text-sm transition-colors"
+                          whileHover={{ color: "#61afef" }}
+                        >
+                          {skill.name}
+                        </motion.span>
                       </div>
-                      <span className="text-code-green text-xs font-mono">{skill.proficiency}</span>
+                      <motion.span 
+                        className="text-code-green text-xs font-mono transition-all"
+                        whileHover={{ scale: 1.2, color: "#61afef" }}
+                      >
+                        {skill.proficiency}
+                      </motion.span>
                     </div>
                   </motion.div>
                 ))}

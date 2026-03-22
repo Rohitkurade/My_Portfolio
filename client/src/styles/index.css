@@ -8,10 +8,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="87CEEB" stroke="87CEEB" stroke-width="0.5"/></svg>') 10 10, auto;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 body {
@@ -19,6 +21,32 @@ body {
   color: #e8eaed;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  font-size: 1.125rem;
+}
+
+/* Text Sizing */
+p {
+  font-size: 1.125rem;
+}
+
+.text-sm {
+  font-size: 0.95rem;
+}
+
+.text-base {
+  font-size: 1.125rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.text-2xl {
+  font-size: 1.875rem;
 }
 
 /* Animated Grid Background */
@@ -51,7 +79,7 @@ body {
 /* Code Block Styling */
 .code-block {
   font-family: 'Source Code Pro', monospace;
-  font-size: 0.875rem;
+  font-size: 0.900rem;
   background: rgba(10, 10, 10, 0.8);
   border: 1px solid rgba(98, 114, 164, 0.2);
   border-radius: 8px;
@@ -60,7 +88,7 @@ body {
 }
 
 .code-keyword {
-  color: #c678dd;
+  color: #00D9FF;
 }
 
 .code-string {
@@ -93,16 +121,188 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(198, 120, 221, 0.5);
+  background: #00D9FF;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(198, 120, 221, 0.8);
+  background: #00D9FF;
 }
 
 /* Selection Styling */
 ::selection {
-  background: rgba(198, 120, 221, 0.3);
+  background: #00D9FF;
   color: #e8eaed;
+}
+
+/* Advanced Hover Effects */
+
+/* Button Hover Effects */
+button {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px #00D9FF;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Link Hover Effects */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #61afef;
+  text-shadow: 0 0 10px rgba(97, 175, 239, 0.5);
+}
+
+/* Card Hover Effects */
+.glass {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2), 0 0 40px rgba(97, 175, 239, 0.1);
+  border-color: rgba(0, 217, 255, 0.4);
+}
+
+/* Image Hover Effects */
+img {
+  transition: all 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.05) rotate(1deg);
+  filter: brightness(1.1) drop-shadow(0 0 15px rgba(0, 217, 255, 0.3));
+}
+
+/* Text Glow Effect on Hover */
+h1 {
+  font-size: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+h2 {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+h3 {
+  font-size: 1.875rem;
+  transition: all 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover {
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.5), 0 0 40px rgba(97, 175, 239, 0.3);
+}
+
+/* Code Block Hover */
+.code-block {
+  transition: all 0.3s ease;
+}
+
+.code-block:hover {
+  background: rgba(10, 10, 10, 0.95);
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+  transform: translateX(4px);
+}
+
+/* Navigation Link Hover with Underline */
+nav a, .navbar button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after, .navbar button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #00D9FF, #61afef);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after, .navbar button:hover::after {
+  width: 100%;
+}
+
+nav a:hover, .navbar button:hover {
+  color: #00D9FF;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+}
+
+/* Project Card Enhancement */
+.group {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover {
+  transform: translateY(-12px);
+}
+
+.group:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.group:hover h3 {
+  color: #61afef;
+}
+
+/* Input Focus Effects */
+input, textarea {
+  transition: all 0.3s ease;
+  border-color: rgba(98, 114, 164, 0.3);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #61afef;
+  box-shadow: 0 0 20px rgba(97, 175, 239, 0.3);
+  transform: translateY(-2px);
+  background: rgba(97, 175, 239, 0.05);
+}
+
+/* Smooth Color Transitions */
+span, p {
+  transition: color 0.3s ease;
+}
+
+/* Badge/Tag Hover */
+.code-block span {
+  transition: all 0.3s ease;
+}
+
+.code-block span:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Scroll Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float:hover {
+  animation-play-state: paused;
 }

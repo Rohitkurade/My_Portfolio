@@ -14,7 +14,7 @@ export const Timeline = () => {
   }, []);
 
   return (
-    <section id="experience" className="relative py-32 px-6 overflow-hidden">
+    <section id="experience" className="relative py-8 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -47,37 +47,60 @@ export const Timeline = () => {
                 key={exp.company}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ 
+                  scale: 1.02, 
+                  transition: { duration: 0.3 }
+                }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`flex gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
               >
                 {/* Content */}
-                <div className="flex-1">
-                  <div className="glass p-6 rounded-lg">
+                <motion.div 
+                  className="flex-1"
+                  whileHover={{ y: -8 }}
+                >
+                  <div className="glass p-6 rounded-lg transition-all hover:shadow-lg hover:shadow-code-purple/30">
                     {/* Timeline dot */}
                     <motion.div
                       className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-code-purple rounded-full border-4 border-dark-bg"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
+                      whileHover={{ scale: 1.3 }}
                       viewport={{ once: true }}
                       style={{ top: '24px' }}
                     />
 
                     <div className="mb-3">
-                      <h3 className="text-2xl font-bold text-code-cyan">{exp.position}</h3>
-                      <p className="text-code-orange font-mono text-sm">{exp.company}</p>
+                      <motion.h3 
+                        className="text-2xl font-bold text-code-cyan transition-colors"
+                        whileHover={{ color: "#61afef" }}
+                      >
+                        {exp.position}
+                      </motion.h3>
+                      <motion.p 
+                        className="text-code-orange font-mono text-sm transition-colors"
+                        whileHover={{ color: "#c678dd" }}
+                      >
+                        {exp.company}
+                      </motion.p>
                     </div>
 
                     <p className="text-gray-400 text-sm mb-3">{exp.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {exp.technologies?.map(tech => (
-                        <span
+                        <motion.span
                           key={tech}
-                          className="code-block text-xs py-1 px-2 bg-code-purple bg-opacity-20 text-code-purple"
+                          className="code-block text-xs py-1 px-2 bg-code-purple bg-opacity-20 text-code-purple cursor-pointer transition-all"
+                          whileHover={{ 
+                            scale: 1.1, 
+                            backgroundColor: "rgba(97, 175, 239, 0.3)",
+                            color: "#61afef"
+                          }}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
 
@@ -117,7 +140,7 @@ export const Timeline = () => {
                       </motion.div>
                     )}
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Spacer for alternate layout */}
                 <div className="flex-1"></div>

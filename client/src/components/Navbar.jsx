@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { scrollToSection } from '../utils/scrollUtils';
 
 export const Navbar = ({ activeSection }) => {
   const sections = [
@@ -8,13 +9,6 @@ export const Navbar = ({ activeSection }) => {
     { id: 'experience', label: '3 // experience' },
     { id: 'contact', label: '4 // contact' },
   ];
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <motion.nav
@@ -41,6 +35,12 @@ export const Navbar = ({ activeSection }) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 * (index + 1) }}
               onClick={() => scrollToSection(section.id)}
+              whileHover={{ 
+                scale: 1.1, 
+                textShadow: "0 0 10px rgba(198, 120, 221, 0.6)",
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.95 }}
               className={`font-mono text-sm transition-all duration-300 relative ${
                 activeSection === section.id
                   ? 'text-code-purple'
@@ -53,6 +53,13 @@ export const Navbar = ({ activeSection }) => {
                   layoutId="underline"
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-code-purple"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                />
+              )}
+              {activeSection !== section.id && (
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-code-cyan opacity-0"
+                  whileHover={{ opacity: 0.5 }}
+                  transition={{ duration: 0.3 }}
                 />
               )}
             </motion.button>

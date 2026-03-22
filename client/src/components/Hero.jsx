@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useTypewriter } from '../hooks/useTypewriter';
+import { scrollToSection } from '../utils/scrollUtils';
 import { useState, useEffect } from 'react';
+import profilePhoto from '../assets/profile_photo.jpeg';
 
 export const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = ['Frontend Developer', 'React.js Enthusiast', 'Computer Engineering Student'];
+  const roles = ['Fullstack Developer', 'React.js Enthusiast', 'Computer Engineering Student'];
   const { displayedText } = useTypewriter(roles[currentRole], 50);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-8 flex items-center justify-center overflow-hidden">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -48,10 +50,21 @@ export const Hero = () => {
           <span className="text-code-cyan ml-2">portfolio init</span>
         </motion.div>
 
+        {/* Profile Photo */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <motion.img
+            src={profilePhoto}
+            alt="Rohit Kurade"
+            className="w-40 h-40 rounded-full mx-auto object-cover border-2 border-code-purple shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.div>
+
         {/* Main heading */}
         <motion.h1 variants={itemVariants} className="text-6xl md:text-7xl font-bold mb-4">
           <span className="text-code-cyan">Rohit</span>
-          <span className="text-code-purple"> Kurade</span>
+          <span className="text-code-blue"> Kurade</span>
         </motion.h1>
 
         {/* Role with typing animation */}
@@ -68,7 +81,7 @@ export const Hero = () => {
 
         {/* Description */}
         <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-          I am a Computer Engineering student with a strong focus on frontend development and React.js. I enjoy building responsive, user-centric web applications and continuously improving my problem-solving skills through real-world projects and hands-on learning.
+          I am a Computer Engineering student with expertise in both frontend and backend development. I enjoy building full-stack web applications with React.js and Node.js, and I'm passionate about creating responsive, scalable solutions while continuously improving my problem-solving skills through real-world projects.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -76,7 +89,7 @@ export const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('projects')}
             className="glass px-8 py-3 font-mono border border-code-purple text-code-purple hover:bg-code-purple hover:text-dark-bg transition-all"
           >
             View Projects
@@ -84,7 +97,7 @@ export const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contact')}
             className="glass px-8 py-3 font-mono border border-code-cyan text-code-cyan hover:bg-code-cyan hover:text-dark-bg transition-all"
           >
             Get in Touch

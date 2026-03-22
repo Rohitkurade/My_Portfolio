@@ -7,11 +7,10 @@ export const Projects = () => {
 
   // Fetch from backend in production
   useEffect(() => {
-    // Uncomment to fetch from backend
-    // fetch('/api/projects')
-    //   .then(res => res.json())
-    //   .then(data => setProjects(data))
-    //   .catch(err => console.error(err));
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/projects`)
+      .then(res => res.json())
+      .then(data => setProjects(data))
+      .catch(err => console.error('Error fetching projects:', err));
   }, []);
 
   const containerVariants = {
@@ -35,7 +34,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="relative py-32 px-6 overflow-hidden">
+    <section id="projects" className="relative py-8 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

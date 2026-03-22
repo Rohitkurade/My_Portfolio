@@ -116,4 +116,14 @@ export const EXPERIENCES = [
     technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'API Integration'],
     website: '',
   },
+  {
+    position: 'Backend Developer (Self-Learning)',
+    company: 'Personal Projects & Development',
+    location: 'Remote',
+    startDate: new Date('2024-06-01'),
+    currentlyWorking: true,
+    description: 'Developed backend APIs and server-side architecture using Node.js and Express.js. Built RESTful APIs, integrated MongoDB databases, and implemented real-time features with Socket.io. Focused on scalability, security, and database optimization.',
+    technologies: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'Socket.io'],
+    website: '',
+  },
 ];

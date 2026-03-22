@@ -9,7 +9,7 @@ module.exports = {
         'dark-bg': '#050505',
         'code-green': '#98C379',
         'code-blue': '#61AFEF',
-        'code-purple': '#C678DD',
+        'code-purple': '#00D9FF',
         'code-cyan': '#56B6C2',
         'code-orange': '#E5C07B',
         'code-red': '#E06C75',

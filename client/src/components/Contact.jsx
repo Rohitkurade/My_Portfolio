@@ -67,7 +67,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6 overflow-hidden">
+    <section id="contact" className="relative py-8 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -120,7 +120,7 @@ export const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your Name"
-                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all"
+                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all hover:border-code-purple"
               />
             </motion.div>
 
@@ -136,7 +136,7 @@ export const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="your.email@example.com"
-                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all"
+                className="w-full mt-2 bg-gray-900 border border-code-purple rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-cyan focus:box-shadow focus:shadow-lg transition-all hover:border-code-cyan"
               />
             </motion.div>
 
@@ -152,7 +152,7 @@ export const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Project Title"
-                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all"
+                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all hover:border-code-purple"
               />
             </motion.div>
 
@@ -168,7 +168,7 @@ export const Contact = () => {
                 required
                 placeholder="Tell me about your project..."
                 rows="5"
-                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all resize-none"
+                className="w-full mt-2 bg-gray-900 border border-code-cyan rounded px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-code-purple transition-all resize-none hover:border-code-purple"
               />
             </motion.div>
 
@@ -182,9 +182,13 @@ export const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full py-3 px-6 font-mono border-2 border-code-green text-code-green bg-code-green bg-opacity-10 rounded hover:bg-opacity-20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ 
+                  scale: 1.08,
+                  boxShadow: "0 0 30px rgba(152, 195, 121, 0.5)",
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.92 }}
+                className="w-full py-3 px-6 font-mono border-2 border-code-green text-code-green bg-code-green bg-opacity-10 rounded hover:bg-opacity-30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <motion.span
