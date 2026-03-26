@@ -1,6 +1,6 @@
-# IDE-Inspired MERN Portfolio 🚀
+# IDE-Inspired React Portfolio 🚀
 
-A high-end, single-page MERN stack developer portfolio with an IDE/Code-Editor aesthetic inspired by Tamal Sen's design philosophy.
+A high-end, single-page React developer portfolio with an IDE/Code-Editor aesthetic featuring glassmorphism UI and smooth animations.
 
 ## Features ✨
 
@@ -17,14 +17,13 @@ A high-end, single-page MERN stack developer portfolio with an IDE/Code-Editor a
 
 ### Sections
 1. **Hero Section** - Terminal-style typing animation cycling through roles
-2. **Skills Cloud** - Categorized tech stack (Frontend, Backend, Database, DevOps)
+2. **Skills Cloud** - Categorized tech stack (Frontend, Backend, Tools)
 3. **Project Gallery** - Masonry grid with project cards featuring:
-   - System Architecture badges
-   - Categorized tech tags (Frontend, Backend, Database)
+   - Project descriptions and tech tags
    - Live Demo & Code repository links
-4. **Career Timeline** - Vertical timeline showing career progression
+4. **Learning Journey** - Timeline showing education and projects
 5. **Contact Form** - JSON-style contact form with validation
-6. **Footer** - Console-style footer with social links
+6. **Footer** - Console-style footer
 
 ## Tech Stack
 
@@ -33,14 +32,7 @@ A high-end, single-page MERN stack developer portfolio with an IDE/Code-Editor a
 - **Vite** - Build tool
 - **Tailwind CSS** - Styling
 - **Framer Motion** - Animations
-- **Axios** - HTTP Client
-
-### Backend
-- **Node.js** - Runtime
-- **Express** - Web Framework
-- **MongoDB** - Database
-- **Mongoose** - ODM
-- **CORS** - Cross-Origin requests
+- **JavaScript ES6+** - Core language
 
 ## Project Structure
 

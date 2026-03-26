@@ -1,13 +1,12 @@
-# 🎨 IDE-Inspired MERN Portfolio
+# 🎨 IDE-Inspired React Portfolio
 
-> A production-ready, full-stack MERN portfolio with terminal aesthetic, glassmorphism UI, and smooth Framer Motion animations.
+> A production-ready, frontend-only React portfolio with terminal aesthetic, glassmorphism UI, and smooth Framer Motion animations.
 
 <div align="center">
 
-![MERN](https://img.shields.io/badge/MERN-Stack-00D084?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js)
-![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-13AA52?style=for-the-badge&logo=mongodb)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 **[Quick Start](#-quick-start) • [Features](#-features) • [Docs](#-documentation) • [Deploy](#-deployment)**
@@ -26,13 +25,7 @@
 - **Smooth Scroll Navigation** with active section detection
 - **Dark Theme** with syntax-highlight color palette
 - **Custom Hooks** for scroll detection and typing effects
-
-### 🔧 Backend Robustness
-- **Express REST API** with 4 resource endpoints
-- **MongoDB + Mongoose** for data persistence
-- **CRUD Operations** for projects, experiences, skills, contacts
-- **CORS Protection** and error handling
-- **Environment Configuration** for multiple environments
+- **Static Content** - No backend required
 
 ### 🎨 Design System
 - **Deep Midnight Black** (#050505) background
@@ -52,32 +45,19 @@
    ├── Hero (Typewriter animation)
    ├── Skills (Categorized tech cloud)
    ├── Projects (Masonry gallery)
-   ├── Timeline (Career progression)
+   ├── Timeline (Learning journey)
    ├── Contact (JSON-style form)
    └── Footer (Console-style)
 
-✅ 4 Custom React Hooks
+✅ 2 Custom React Hooks
    ├── useScrollActive
    ├── useTypewriter
-   └── ... expandable
 
-✅ REST API (4 Endpoints)
-   ├── /api/projects
-   ├── /api/experiences
-   ├── /api/skills
-   └── /api/contact
-
-✅ 4 MongoDB Models
-   ├── Project
-   ├── Experience
-   ├── Skill
-   └── Contact
-
-✅ Complete Documentation
-   ├── Main README.md
-   ├── SETUP_GUIDE.md
-   ├── QUICKSTART.md
-   ├── DOCUMENTATION.md
+✅ Constants & Static Data
+   ├── SKILLS
+   ├── PROJECTS
+   ├── EXPERIENCES
+   └── API_URL (for future backend)
    └── PROJECT_SUMMARY.md
 
 ✅ 40+ Files & Folders

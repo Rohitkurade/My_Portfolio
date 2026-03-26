@@ -1,56 +1,31 @@
-# MERN Portfolio - Quick Start Guide
+# React Portfolio - Quick Start Guide
 
 ## 🚀 Installation (2 minutes)
 
 ### 1. Install Dependencies
 
 ```bash
-# Option A: Using npm
-npm run install-all
-
-# Option B: Manual installation
-cd server && npm install
-cd ../client && npm install
-```
-
-### 2. Configure Backend
-
-Create `server/.env`:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/portfolio
-NODE_ENV=development
-CLIENT_URL=http://localhost:5173
-```
-
-### 3. Start MongoDB
-
-```bash
-# Using local MongoDB
-mongod
-
-# OR using MongoDB Atlas (update MONGODB_URI in .env)
-```
-
-### 4. Run Development Servers
-
-**Terminal 1 - Backend:**
-```bash
-cd server
-npm run dev
-# Server runs on http://localhost:5000
-```
-
-**Terminal 2 - Frontend:**
-```bash
 cd client
+npm install
+```
+
+### 2. Run Development Server
+
+```bash
 npm run dev
 # Frontend runs on http://localhost:5173
 ```
 
+### 3. Build for Production
+
+```bash
+npm run build
+# Creates 'dist' folder with optimized build
+```
+
 ## 📝 Customization
 
-### Add Your Information
+### Update Your Information
 
 Edit `/client/src/utils/constants.js`:
 - Update SKILLS
@@ -83,20 +58,30 @@ Fonts are loaded from Google Fonts in `/client/src/styles/index.css`
 
 ## 🌐 Deployment
 
-### Frontend (Vercel, Netlify)
+### Vercel (Recommended)
 
 ```bash
-cd client
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Netlify
+
+```bash
+# Build
 npm run build
-# Deploy the 'dist' folder
+
+# Deploy the 'dist' folder to Netlify
 ```
 
-### Backend (Heroku, Railway, Render)
-
-```bash
-cd server
-git push <remote> main
-```
+### Other Platforms
+- GitHub Pages
+- Render
+- Firebase Hosting
+- AWS Amplify
 
 Update `CLIENT_URL` environment variable on your hosting platform.
 
