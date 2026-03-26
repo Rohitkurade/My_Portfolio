@@ -37,7 +37,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-8 flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-24 md:pt-32 flex items-center justify-center overflow-hidden">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -62,13 +62,13 @@ export const Hero = () => {
         </motion.div>
 
         {/* Main heading */}
-        <motion.h1 variants={itemVariants} className="text-6xl md:text-7xl font-bold mb-4">
+        <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
           <span className="text-code-cyan">Rohit</span>
           <span className="text-code-blue"> Kurade</span>
         </motion.h1>
 
         {/* Role with typing animation */}
-        <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-mono text-code-blue mb-6">
+        <motion.h2 variants={itemVariants} className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-mono text-code-blue mb-6">
           <span className="text-code-purple">&gt;</span> {displayedText}
           <motion.span
             animate={{ opacity: [0, 1] }}
@@ -80,12 +80,12 @@ export const Hero = () => {
         </motion.h2>
 
         {/* Description */}
-        <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-          I am a Computer Engineering student with expertise in both frontend and backend development. I enjoy building full-stack web applications with React.js and Node.js, and I'm passionate about creating responsive, scalable solutions while continuously improving my problem-solving skills through real-world projects.
+        <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 max-w-2xl mx-auto px-4">
+          I am a Computer Engineering student with a strong focus on frontend development and React.js. I enjoy building responsive, user-centric web applications and continuously improving my problem-solving skills through real-world projects and hands-on learning.
         </motion.p>
 
         {/* CTA Buttons */}
-        <motion.div variants={itemVariants} className="flex gap-6 justify-center mb-12">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 px-4">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

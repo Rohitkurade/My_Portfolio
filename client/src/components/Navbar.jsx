@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { scrollToSection } from '../utils/scrollUtils';
 
 export const Navbar = ({ activeSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const sections = [
     { id: 'hero', label: '0 // home' },
     { id: 'skills', label: '1 // expertise' },
@@ -9,6 +12,11 @@ export const Navbar = ({ activeSection }) => {
     { id: 'experience', label: '3 // experience' },
     { id: 'contact', label: '4 // contact' },
   ];
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setIsMenuOpen(false);
+  };
 
   return (
     <motion.nav
@@ -22,12 +30,13 @@ export const Navbar = ({ activeSection }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-code-purple font-mono text-xl font-bold"
+          className="text-code-purple font-mono text-lg md:text-xl font-bold"
         >
-          &lt;Portfolio /&gt;
+          &lt;RK /&gt;
         </motion.div>
 
-        <div className="flex gap-8">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-4 lg:gap-8">
           {sections.map((section, index) => (
             <motion.button
               key={section.id}
@@ -41,7 +50,7 @@ export const Navbar = ({ activeSection }) => {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              className={`font-mono text-sm transition-all duration-300 relative ${
+              className={`font-mono text-xs lg:text-sm transition-all duration-300 relative ${
                 activeSection === section.id
                   ? 'text-code-purple'
                   : 'text-gray-400 hover:text-code-cyan'
@@ -65,7 +74,46 @@ export const Navbar = ({ activeSection }) => {
             </motion.button>
           ))}
         </div>
+
+        {/* Mobile Hamburger Menu */}
+        <motion.button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-code-cyan text-2xl transition-all"
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className="block">
+            {isMenuOpen ? '✕' : '☰'}
+          </span>
+        </motion.button>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{
+          opacity: isMenuOpen ? 1 : 0,
+          height: isMenuOpen ? 'auto' : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        className={`md:hidden overflow-hidden ${isMenuOpen ? 'visible' : 'invisible'}`}
+      >
+        <div className="px-6 py-4 flex flex-col gap-3 border-t border-gray-700">
+          {sections.map((section) => (
+            <motion.button
+              key={section.id}
+              onClick={() => handleNavClick(section.id)}
+              whileTap={{ scale: 0.95 }}
+              className={`text-left font-mono text-sm py-2 px-3 rounded transition-all ${
+                activeSection === section.id
+                  ? 'text-code-purple bg-code-purple bg-opacity-10'
+                  : 'text-gray-400 hover:text-code-cyan hover:bg-gray-800 hover:bg-opacity-20'
+              }`}
+            >
+              {section.label}
+            </motion.button>
+          ))}
+        </div>
+      </motion.div>
     </motion.nav>
   );
 };
