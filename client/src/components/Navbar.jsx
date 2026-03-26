@@ -32,7 +32,8 @@ export const Navbar = ({ activeSection }) => {
           transition={{ delay: 0.2 }}
           className="text-code-purple font-mono text-lg md:text-xl font-bold"
         >
-          &lt;RK /&gt;
+          <span className="hidden sm:inline">&lt;Rohit Kurade /&gt;</span>
+          <span className="sm:hidden">&lt;RK /&gt;</span>
         </motion.div>
 
         {/* Desktop Navigation */}
