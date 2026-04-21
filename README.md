@@ -35,7 +35,7 @@ A high-end, single-page React developer portfolio with an IDE/Code-Editor aesthe
 - **JavaScript ES6+** - Core language
 
 ## Project Structure
-
+```
 portfolio_mern/
 ├── client/                    # React Frontend
 │   ├── src/
@@ -79,6 +79,7 @@ portfolio_mern/
     ├── server.js             # Main Server File
     ├── package.json
     └── .env.example
+
 ```
 
 ## Installation & Setup
